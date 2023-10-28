@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Yards to Square Feet Converter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .container {
+            width: 300px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #7eb7f3;
+        }
+        label {
+            font-weight: bold;
+        }
+        input[type="number"] {
+            width: 100%;
+            padding: 5px;
+            margin-bottom: 10px;
+        }
+        button {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Yards to Square Feet Converter</h2>
+        <label>Enter Yards:</label>
+        <input type="number" id="yardsInput">
+        <button onclick="convert()">Convert</button>
+        <p id="result"></p>
+    </div>
+
+    <script>
+        function convert() {
+            const yards = parseFloat(document.getElementById('yardsInput').value);
+            if (!isNaN(yards)) {
+                const squareFeet = yards * 9;
+                document.getElementById('result').innerHTML = `${yards} yards is equal to ${squareFeet} square feet.`;
+            } else {
+                document.getElementById('result').innerHTML = 'Please enter a valid number of yards.';
+            }
+        }
+    </script>
+</body>
+</html>
